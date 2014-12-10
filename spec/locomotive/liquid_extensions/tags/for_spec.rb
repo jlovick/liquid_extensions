@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe Locomotive::LiquidExtensions::Tags::For do
 
-  before { ::Liquid::Template.error_mode = :strict }
-
   let(:tag_class) { Locomotive::LiquidExtensions::Tags::For }
 
   let(:array) { [] }
