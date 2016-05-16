@@ -7,4 +7,7 @@ source 'http://rubygems.org'
 gem 'httparty', '~> 0.11.0'
 
 # Specify your gem's dependencies in solid.gemspec
+#
+gem 'activesupport'
+
 gemspec
