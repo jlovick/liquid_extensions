@@ -8,7 +8,7 @@ module Locomotive
           # little hack to make it work with Liquid 2.6.2
           @options = context
 
-          super
+          super(tag_name, markup, tokens)
 
           if @attributes['join']
             @attributes['join'] = remove_quotes(@attributes['join'])
