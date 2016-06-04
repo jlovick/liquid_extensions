@@ -4,10 +4,8 @@ module Locomotive
 
       class For < ::Liquid::For
 
-        def initialize(*args)
+        def initialize(tag_name, markup, tokens, context = "")
           # little hack to make it work with Liquid 2.6.2
-          tag_name, markup, tokens, context = *args
-
           @options = context
 
           super
