@@ -2,7 +2,9 @@
 
 unless defined?(Rails)
 
+  require 'active_support'
   require 'active_support/core_ext'
+  
 #  require 'active_support/core_ext/hash/reverse_merge'
 #  require 'active_support/core_ext/big_decimal/conversions'
 #  require 'active_support/core_ext/float/rounding'
