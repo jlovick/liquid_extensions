@@ -4,43 +4,43 @@ module Locomotive
 
       class For < ::Liquid::For
 
-        def initialize(tag_name, markup, tokens, context = "")
-          # little hack to make it work with Liquid 2.6.2
-          @options = context
+        # def initialize(tag_name, markup, tokens, context = "")
+        #   # little hack to make it work with Liquid 2.6.2
+        #   @options = context
 
-          super(tag_name, markup, tokens)
+        #   super(tag_name, markup, tokens)
 
-          if @attributes['join']
-            @attributes['join'] = remove_quotes(@attributes['join'])
-          end
-        end
+        #   if @attributes['join']
+        #     @attributes['join'] = remove_quotes(@attributes['join'])
+        #   end
+        # end
 
-        def render(context)
-          super(context).gsub(/#{separator}$/, '')
-        end
+        # def render(context)
+        #   super(context).gsub(/#{separator}$/, '')
+        # end
 
-        def render_all(nodes, context)
-          content   = super.strip
+        # def render_all(nodes, context)
+        #   content   = super.strip
 
-          return '' if content.blank?
+        #   return '' if content.blank?
 
-          if context['forloop']['last'] || separator.blank?
-            content
-          else
-            content + separator
-          end
-        end
+        #   if context['forloop']['last'] || separator.blank?
+        #     content
+        #   else
+        #     content + separator
+        #   end
+        # end
 
-        protected
+        # protected
 
-        def separator
-          @attributes['join']
-        end
+        # def separator
+        #   @attributes['join']
+        # end
 
-        def remove_quotes(string)
-          # more leading and trailling quotes (simple or double)
-          string.gsub(/^(['"]+)/, '').gsub(/(['"]+)$/, '')
-        end
+        # def remove_quotes(string)
+        #   # more leading and trailling quotes (simple or double)
+        #   string.gsub(/^(['"]+)/, '').gsub(/(['"]+)$/, '')
+        # end
 
         # Dirty hack which is a consequence of the terrible code in the original for tag.
         # def strict_parse(markup)
@@ -66,7 +66,7 @@ module Locomotive
 
       end
 
-      ::Liquid::Template.register_tag('for', For)
+   #   ::Liquid::Template.register_tag('for', For)
 
     end
   end
